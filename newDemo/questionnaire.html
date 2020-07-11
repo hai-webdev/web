@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问卷调查</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 14px;
+            font-style: normal;
+        }
+
+        #app {
+            display: flex;
+            justify-content: space-between;
+            width: 1000px;
+            margin: 10px auto;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+
+        #app .area {
+            width: 50%;
+        }
+
+        #app .area:first-child {
+            border-right: 1px dashed #000;
+        }
+
+        #app .area h2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-size: 20px;
+        }
+
+        #app .area ul {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+
+        #app .area ul li {
+            margin-bottom: 20px;
+        }
+
+        #app .area ul li h3 {
+            margin-bottom: 8px;
+        }
+
+        #app .area ul li input[type='text'],
+        #app .area ul li textarea {
+            width: 250px;
+            height: 25px;
+            padding-left: 8px;
+            border-radius: 5px;
+            border: 1px solid #888;
+            font-size: 12px;
+            outline: none;
+        }
+
+        #app .area ul li input[type='radio'],
+        #app .area ul li input[type='checkbox'] {
+            margin-bottom: 8px;
+        }
+
+        #app .area ul li textarea {
+            padding-top: 8px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div
+        class="area"
+        v-for="area in 2"
+        >
+        <h2>{{ area === 1 ? "提问区" : "回答展示区" }}</h2>
+
+        <ul>
+            <li v-for="question in questionList">
+                <h3>{{ question.title }}</h3>
+                <div v-if="question.type === 'short'">
+                    <input type="text" v-if="area === 1" v-model="question.answer">
+                    <span v-else>{{ question.answer }}</span>
+                </div>
+                <div v-if="question.type === 'single'">
+                    <template v-if="area === 1">
+                        <div v-for="choose in question.chooseList" :key="choose" >
+                            <input type="radio" :value="choose" v-model="question.answer">
+                            <span>{{ choose }}</span>
+                        </div>
+                    </template>
+                    <span v-else>{{ question.answer }}</span>
+                </div>
+                <div v-if="question.type === 'multiple'">
+                    <template v-if="area === 1">
+                        <div v-for="choose in question.chooseList" :key="choose" >
+                            <input type="checkbox" :value="choose" v-model="question.answer">
+                            <span>{{ choose }}</span>
+                        </div>
+                    </template>
+                    <span v-else>{{ question.answer && question.answer.toString() }}</span>
+                </div>
+                <div v-if="question.type === 'long'">
+                    <textarea v-if="area === 1" v-model="question.answer"></textarea>
+                    <span v-else>{{ question.answer }}</span>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+
+    <script>
+        const questionList = [
+            {
+                type: 'short',
+                title: '1.请问你的姓名是？',
+                chooseList: null,
+                id: 0,
+            },
+            {
+                type: 'single',
+                title: '2.请问您的性别是？',
+                chooseList: [
+                    '男',
+                    '女',
+                    '保密',
+                ],
+                id: 1,
+            },
+            {
+                type: 'multiple',
+                title: '3. 请选择您的兴趣爱好：',
+                chooseList: [
+                    '看书',
+                    '游泳',
+                    '跑步',
+                    '看电影',
+                    '听音乐',
+                ],
+                id: 2,
+            },
+            {
+                type: 'long',
+                title: '4. 请介绍一下自己:',
+                chooseList: null,
+                id: 3,
+            },
+        ]
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                questionList,
+                fullName: '',
+                sex: '',
+                love: []
+            }
+        })
+        vm.questionList.forEach(function(questionList){
+            const answer = questionList.type === "multiple" ? [] : "";
+            vm.$set(questionList, "answer", answer);
+        })
+    </script>
+
+</body>
+
+</html>

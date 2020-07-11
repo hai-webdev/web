@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root{
+    height: 100%;
+
+    body{
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        .wrapper::before{
+            content: '';
+            display: block;
+            background-color: rgba(0,0,0,0.7);
+            // opacity: 0.5;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -999;
+        }
+        .wrapper{
+            padding-top: 70px;
+            .img{
+                width: 60vw;
+                height: 60vw;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-bottom: 40px;
+                background-color: black;
+                img{
+                    width: 70%;
+                    height: 70%;
+                    margin: 15% 0 0 15%;
+                    border-radius: 50%;
+                }
+            }
+            .text{
+                text-align: center;
+                color: white;
+                h1{
+                    margin-bottom: 10px;
+                }
+                p{
+                    line-height: 20px;
+                }
+            }
+            .audio{
+                width: 100%;
+                height: 20px;
+                margin-top: 50px;
+                box-sizing: border-box;
+                display: flex;
+                .list_z{
+                    display: inline-block;
+                    flex: 17;
+                    height: 1px;
+                    background-color: white;
+                    position: relative;
+                    top: 50%;
+                    .list_d{
+                        width: 5px;
+                        height: 5px;
+                        background-color: white;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -2px;
+                        left: 0px;
+                    }
+                    .list_w{
+                        height: 1px;
+                        width: 0;
+                        background-color: #888;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 20px;
+                    flex: 3;
+                    color: white;
+                }
+            }
+            nav{
+                width: 100%;
+                height: 48px;
+                position: fixed;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.5);
+                ul{
+                    height: 100%;
+                    display: flex;
+                    li{
+                        height: 100%;
+                        flex: 1;
+                        cursor: pointer;
+                        background-size: 25%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        
+                    }
+                    li:nth-of-type(1){
+                        background-image: url(../img/icon-like.png);
+                        &.like_active{
+                            background-image: url(../img/icon-like-solid.png);
+                        }
+                    }
+                    li:nth-of-type(2){
+                        background-image: url(../img/icon-prev.png);
+                    }
+                    li:nth-of-type(3){
+                        background-image: url(../img/icon-play.png);
+                        &.play_active{
+                            background-image: url(../img/icon-pause.png)
+                        }
+                    }
+                    li:nth-of-type(4){
+                        background-image: url(../img/icon-next.png);
+                    }
+                    li:nth-of-type(5){
+                        background-image: url(../img/icon-list.png);
+                    }
+                }
+            }
+            .menu_list{
+                position: absolute;
+                bottom: 48px;
+                width: 100vw;
+                display: none;
+                &.hidden{
+                    // display: block;
+                }
+                li{
+                    width: 100vw;
+                    line-height: 50px;
+                    background-color: rgba(0,0,0,0.2);
+                    border-bottom: 1px solid #eee;
+                    text-align: center;
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

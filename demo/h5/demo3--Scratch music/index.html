@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo3--Scratch music</title>
+    <style>
+        :root {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 500px;
+            height: 500px;
+            background-image: url(./bg.jpg);
+            position: relative;
+        }
+
+        canvas {
+            position: absolute;
+            left: 40px;
+            bottom: 72px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas width="420" height="190"></canvas>
+    </div>
+
+    <script>
+        var canvas = document.getElementsByTagName('canvas')[0];
+        var ctx = canvas.getContext('2d');
+
+        function bindEvent() {
+            var disX, disY, curX, curY;
+            ctx.beginPath();
+            ctx.fillStyle = '#ccc';
+            ctx.fillRect(0, 0, 420, 190);
+            canvas.onmousedown = mousedown;
+        }
+
+        function mousedown(e) {
+            disX = e.offsetX;
+            disY = e.offsetY;
+            canvas.onmousemove = mousemove;
+            document.onmouseup = mouseup;
+        }
+
+        function mousemove(e) {
+            curX = e.offsetX;
+            curY = e.offsetY;
+            //把卡刮开；
+            ctx.beginPath();
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.lineWidth = 15;
+            ctx.lineCap = 'round';
+            ctx.moveTo(disX, disY);
+            ctx.lineTo(curX, curY);
+            disX = curX;
+            disY = curY;
+            ctx.stroke();
+        }
+
+        function mouseup() {
+            canvas.onmousemove = function () {
+                return false;
+            }
+            document.onmouseup = function () {
+                return false;
+            }
+            clearPage();
+        }
+
+        function clearPage() {
+            var pixel = ctx.getImageData(0, 0, 420, 190);
+            var data = pixel.data;
+            var height = pixel.height;
+            var width = pixel.width;
+            var count = 0;
+            for(var i = 3; i < data.length; i += 4){
+                if(data[i] == 0){
+                    count ++;
+                }
+                if(count > width * height * 0.5){
+                    ctx.clearRect(0, 0, 420, 190);
+                }
+            }
+        }
+
+        bindEvent();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo4--Vectorgraph</title>
+    <style>
+        :root, body{
+            height: 100%;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        svg{
+            /* background-image: url(./1.bmp); */
+        }
+        rect{
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 5px;
+        }
+        .yan{
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 5px;
+        }
+        .yanzhu{
+            fill:#000;
+        }
+        .bizi{
+            stroke: #000;
+            stroke-width: 5px;
+            fill: transparent;
+        }
+        ellipse{
+            stroke: #000;
+            stroke-width: 5px;
+            fill: transparent;
+        }
+    </style>
+</head>
+<body>
+    <svg width='528' height='554'>
+        <rect x='70' y='70' width='400' height='400' rx='25' ry='25'></rect>
+        <circle r='35' cx='177' cy='203' class="yan"></circle>
+        <circle r='35' cx='365' cy='203' class="yan"></circle>
+        <circle r ='11' cx='190' cy='216' class="yanzhu"></circle>
+        <circle r ='11' cx='378' cy='216' class="yanzhu"></circle>
+        <polygon points='271 269, 258 310, 285 310' class="bizi"></polygon>
+        <ellipse rx='67' ry='27' cx='271' cy='364'></ellipse>
+        <polygon points='96 69, 138 26, 204 69, 270 26, 339 69, 408 26, 450 69' class="head"></polygon>
+    </svg>
+</body>
+</html>

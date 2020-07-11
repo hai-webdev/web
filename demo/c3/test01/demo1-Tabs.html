@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo1-Tabs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .wrapper {
+            position: absolute;
+            left: 40%;
+            top: 30%;
+            background-color: #46c9ff;
+            border-radius: 40px;
+            padding: 20px;
+        }
+
+        .wrapper .box1 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .wrapper .box1 span {
+            font-size: 12px;
+        }
+
+        span:not(:first-of-type) {
+            display: none;
+        }
+
+        .wrapper .day {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .wrapper .day a {
+            display: inline-block;
+            background-color: #fff;
+            padding: 4px 10px;
+            margin: 0 4px;
+            cursor: pointer;
+            border-radius: 8px;
+            color: #46c9ff;
+        }
+
+        .wrapper .content li {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 40px;
+        }
+
+        .wrapper .content li:not(:target) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <p class="box1">
+            我的本周任务是______？
+            <span>（备注：点击下方按钮查看任务）</span>
+        </p>
+        <div class="day">
+            <a href="#a1">星期一</a>
+            <a href="#a2">星期二</a>
+            <a href="#a3">星期三</a>
+            <a href="#a4">星期四</a>
+            <a href="#a5">星期五</a>
+            <a href="#a6">星期六</a>
+            <a href="#a7">星期天</a>
+        </div>
+        <ul class="content">
+            <li id="a1">今天周一了，要开始学成哥的C3课了</li>
+            <li id="a2">今天周二了，要开始学成哥的C3课了</li>
+            <li id="a3">今天周三了，要开始学成哥的C3课了</li>
+            <li id="a4">今天周四了，要开始学成哥的C3课了</li>
+            <li id="a5">今天周五了，要开始学成哥的C3课了</li>
+            <li id="a6">今天周六了，要开始学成哥的C3课了</li>
+            <li id="a7">今天周天了，要开始学成哥的C3课了</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

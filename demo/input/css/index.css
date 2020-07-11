@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;    
+}
+
+.wrapper {
+    width: 390px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 100px auto 0;
+    padding: 10px 15px;
+}
+
+/*上部分*/
+.wrapper .boxTop {
+    margin-bottom: 10px;
+}
+
+.wrapper .boxTop input {
+    width: 220px;
+    height: 25px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    outline: none;
+}
+
+.wrapper .boxTop span {
+    color: #3c8dff;
+    padding: 0 6px;
+    cursor: pointer;
+}
+
+.wrapper .boxTop .btnBox {
+    display: inline-block;
+}
+
+.wrapper .boxTop .active {
+    background-color: #3c8dff;
+    color: white;
+    border-radius: 3px;
+}
+
+/*下部分*/
+
+.wrapper .boxBottom ul li {
+    position: relative;
+    border-bottom: 1px solid #777;
+    padding: 10px 0;
+    padding-left: 50px;
+}
+
+.wrapper .boxBottom ul li img {
+    position: absolute;
+    left: 0;
+}
+
+.wrapper .boxBottom ul li h4 {
+    font-weight: normal;
+}
+
+.wrapper .boxBottom ul li p {
+    font-size: 12px;
+    color: #777;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo4--Vectorgraph</title>
+    <style>
+        :root, body{
+            height: 100%;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        svg{
+            /* background-image: url(./1.jpg); */
+        }
+        .face{
+            fill:#2e87fd;
+            stroke:#000;
+            stroke-width:2px;
+        }
+        .mouth{
+            fill: #fff;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        .eye{
+            fill: #fff;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+        .nose{
+            fill: #fe0000;
+            stroke: #000;
+            stroke-width:2px;
+        }
+        .nose1{
+            fill: #fff;
+        }
+        line{
+            stroke: #000;
+            stroke-width: 2px;
+            stroke-linecap: round;
+        }
+        .mouth1{
+            fill: transparent;
+            stroke: #000;
+            stroke-linecap: round;
+            stroke-width: 2px;
+        }
+        .pocket{
+            stroke: #000;
+            stroke-width: 2px;
+            fill: #fff;
+            stroke-linecap: round;
+        }
+        .center{
+            stroke: #000;
+            stroke-width: 2px;
+            fill: #fe0000;
+        }
+        .bell{
+            stroke: #000;
+            stroke-width:2px;
+            fill: #d9d114;
+        }
+        .bell1{
+            fill: #000;
+        }
+        .bell2{
+            stroke: #000;
+            stroke-width: 1px;
+        }
+
+        polygon{
+            stroke: #000;
+            stroke-width: 2px;
+            fill: #2e87fd;
+        }
+        .jio{
+            stroke: #000;
+            fill: #fff;
+            stroke-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <svg width='468' height='546'>
+        <!--头部-->
+        <circle r='161' cx='232' cy='196' class="face"></circle>
+        <ellipse rx='133' ry='106' cx='233' cy='236' class="mouth"></ellipse>
+        <ellipse rx='40' ry='47' cx='193' cy='136' class="eye"></ellipse>
+        <ellipse rx='40' ry='47' cx='274' cy='136' class="eye"></ellipse>
+        <rect x='193' y='142' width='12' height='20' rx='6' ry='6'></rect>
+        <rect x='254' y='142' width='12' height='20' rx='6' ry='6'></rect>
+        <circle r='16' cx='233' cy='181' class="nose"></circle>
+        <rect x='233' y='169' width='12' height='16' rx='6' ry='6' class="nose1"></rect>
+        <line x1='233' y1='198' x2='233' y2='291'></line>
+        <path d='M 147 259 A 99 65 0 0 0 317 259' class="mouth1"></path>
+        <line x1='119' y1='224' x2='193' y2='224'></line>
+        <line x1='125' y1='196' x2='193' y2='210'></line>
+        <line x1='125' y1='250' x2='193' y2='236'></line>
+        <line x1='272' y1='224' x2='348' y2='224'></line>
+        <line x1='272' y1='210' x2='341' y2='196'></line>
+        <line x1='272' y1='236' x2='341' y2='250'></line>
+        <!--第二部分-->
+        <polygon points='132 342, 335 342, 387 367, 368 399, 333 384, 334 494, 234 500, 131 494, 132 385, 83 362, 94 325'></polygon>
+        <path d='M 164 341 A 81 81 0 1 0 301 341' class="pocket"></path>
+        <path d='M 184 396 A 47 51 0 0 0 280 396 z' class="pocket"></path>
+        <rect x='125' y='324' width='214' height='18' rx='10' ry='10' class="center"></rect>
+        <circle r='20' cx='233' cy='350' class="bell"></circle>
+        <circle r='6.5' cx='233' cy='360' class="bell1"></circle>
+        <line x1='217' y1='340' x2='249' y2='340' class="bell2"></line>
+        <line x1='215' y1='344' x2='251' y2='344' class="bell2"></line>
+        <line x1='233' y1='366' x2='233' y2='370'></line>
+        <path d='M 220 502 A 18 24 0 0 1 246 502' class="jio"></path>
+        <circle r='27' cx='69' cy='338' class="mouth"></circle>
+        <circle r='27' cx='394' cy='393' class="mouth"></circle>
+        <ellipse rx='60.5' ry='16.5' cx='169.5' cy='507' class="mouth"></ellipse>
+        <ellipse rx='60.5' ry='16.5' cx='295.5' cy='507' class="mouth"></ellipse>
+        <line x1='132' y1='370' x2='131' y2='494'></line>
+        <line x1='332' y1='370' x2='334' y2='494'></line>
+
+    </svg>
+</body>
+</html>

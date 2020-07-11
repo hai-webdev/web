@@ -1,0 +1,97 @@
+@import "reset.css";
+:root,
+:root body {
+  width: 100%;
+  height: 100%;
+}
+:root #container {
+  width: 100%;
+  min-width: 750px;
+  position: relative;
+}
+:root #container #wrapper-swiper {
+  list-style: none;
+  width: 100%;
+  position: relative;
+}
+:root #container #wrapper-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+:root #container #wrapper-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+:root #container #wrapper-swiper .swiper-slide.active {
+  display: block;
+}
+:root #container .float-list {
+  position: absolute;
+  z-index: 999;
+  right: 10%;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:root #container .float-list ul#swiper-pagination {
+  width: 100%;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items {
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items p {
+  display: none;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items.active {
+  background-color: rgba(20, 138, 155, 0.2);
+  padding: 8px 20px;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items.active .title-wrap .title {
+  font-size: 24px;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items.active p {
+  display: block;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items .title-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items .title-wrap .num {
+  width: 16px;
+  height: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  float: left;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items .title-wrap .title {
+  float: left;
+  padding-left: 10px;
+  font-size: 14px;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items:nth-of-type(1) .title-wrap .num {
+  background-color: #fd537f;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items:nth-of-type(2) .title-wrap .num {
+  background-color: #f2a20c;
+}
+:root #container .float-list ul#swiper-pagination li.swiper-items:nth-of-type(3) .title-wrap .num {
+  background-color: #148aff;
+}

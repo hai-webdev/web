@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resource</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #app {
+            position: relative;
+            width: 284px;
+            margin: 50px auto;
+        }
+
+        .username,
+        .mail {
+            width: 284px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .username input,
+        .mail input {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            padding: 10px 8px;
+            border: none;
+            outline: none;
+        }
+
+        .upload-btn,
+        .show-btn,
+        .test-btn {
+            width: 284px;
+            height: 40px;
+            margin-bottom: 10px;
+            line-height: 40px;
+            color: #fff;
+            background-color: #3f89ec;
+            border-radius: 3px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .person-list {
+            width: 284px;
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+
+        .person {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            font-size: 12px;
+        }
+
+        .person span:first-of-type {
+            padding-right: 8px;
+            border-right: 1px solid #ddd;
+        }
+
+        .person span:last-of-type {
+            padding-left: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="username">
+            <input type="text" placeholder="用户名" v-model="name">
+        </div>
+        <div class="mail">
+            <input type="text" placeholder="邮箱" v-model="mail">
+        </div>
+        <div
+        class="upload-btn"
+        @click="handleUpload"
+        >上传</div>
+        <div class="test-btn" @click="handleTest">测试jsonp</div>
+        <div class="show-btn" @click="handleShow">显示人物信息</div>
+        <ul class="person-list"
+        v-if="personList.length"
+        >
+            <li
+            class="person"
+            v-for="(person, index) in personList"
+            :key="index"
+            >
+        <span>{{ person.name}}</span>
+        <span>{{ person.mail }}</span>
+        </li>
+        </ul>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                name: "",
+                mail: "",
+                msg: "",
+                personList: []
+            },
+            methods:{
+                handleUpload(){
+                    this.$http.post("https://developer.duyiedu.com/vue/setUserInfo",{
+                        name: this.name,
+                        mail: this.mail
+                    }).then( res => {
+                        this.msg = res.data.msg;
+                    }).catch( error => {
+                        this.msg = error.data.msg
+                    })
+                },
+                handleShow(){
+                    this.$http.get("https://developer.duyiedu.com/vue/getUserInfo").then(
+                        res => {
+                            return res.json();
+                        }
+                    ).then(
+                        res => {
+                            this.personList = res.data;
+                        }
+                    )
+                },
+                handleTest(){
+                    this.$http.jsonp("https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su", {
+                        params:{
+                            wd: "hello"
+                        },
+                        jsonp: "cb"
+                    }).then( res => {
+                        return res.json();
+                    }).then(res => {
+                        this.msg = "test: " + res.q;
+                    })
+                }
+            },
+            watch: {
+                msg(){
+                    if(this.msg === ""){
+                        return false;
+                    }
+                    alert(this.msg);
+                    this.msg = "";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

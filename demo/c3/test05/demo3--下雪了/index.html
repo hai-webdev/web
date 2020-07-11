@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        :root, body{
+            height:100%;
+            width:100%;
+        }
+
+        body{
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .sky{
+            /* position: fixed; */
+            float: left;
+        }
+
+        @keyframes drop{
+            0%{
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100%{
+                transform: translateY(1500px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky"></div>
+
+    <script src="./jquery.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

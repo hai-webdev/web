@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>指南针</title>
+</head>
+<body>
+    <p>您现在的方向朝：<span style="color:blue;font-weight: bold;font-size: 16px;"></span></p>
+
+    <script>
+        window.addEventListener('deviceorientation', function(e){
+            let p = document.getElementsByTagName('span')[0];
+            let devi = e.alpha;
+            if(devi > 350 || devi < 10){
+                p.innerHTML = '北'
+            } else if (devi > 80 || devi < 110){
+                p.innerHTML = '西'
+            } else if (devi > 170 || devi < 190){
+                p.innerHTML = '南'
+            } else if (devi > 260 || devi < 280){
+                p.innerHTML = '东'
+            }
+        })
+    </script>
+</body>
+</html>

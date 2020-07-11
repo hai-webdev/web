@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>heartbeat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="textCon">
+            <span>I Love JunJun</span>
+        </div>
+        <div class="heart"></div>
+    </div>
+    <script>
+    (function(){
+        init();
+
+
+        function init(){
+            var wrapper = document.getElementsByClassName("textCon")[0];
+            var wrapWidth = wrapper.offsetWidth;
+            // 数字越小，小红心越多
+            var heartNum = parseInt(wrapWidth / 10);
+            var wrapHeight = wrapper.offsetHeight;
+            for(var i = 0; i < heartNum; i ++){
+                var item = document.createElement("div");
+                item.classList = "item";
+                // 设置红色的大小（随机数范围）
+                var widthAndHeight = random(6, 14);
+                item.style.width = widthAndHeight + "px";
+                item.style.height = widthAndHeight + "px";
+                // 设置红心距离文字底部的距离（随机数）
+                item.style.bottom = random(10, 50) + "px";
+                item.style.left = random(20, wrapWidth - 20) + "px";
+                // 设置延迟时间（随机数）
+                item.style.animationDelay = random(0, 40) / 10 + "s";
+                item.style.opacity = "0";
+                wrapper.appendChild(item);
+            }
+        }
+
+        //生成随机数
+        function random(min, max){
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+
+    }())
+    
+
+
+    </script>
+</body>
+</html>

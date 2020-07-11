@@ -1,0 +1,63 @@
+    :root,body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    body{
+      width: 100%;
+      background-color: black;
+      text-align: center;
+      color: white;
+    }
+    h1{
+      border: none;
+      outline: none;
+      font-size: 44px;
+      font-family: 'YouYuan';
+    }
+
+    h6{
+        margin-bottom: 100px;    
+    }
+
+    .content{
+      display: inline-block;
+        width: 90%;
+    }
+
+    .content p {
+        flex: 1;
+        line-height: 40px;
+        font-size: 24px;
+        animation: move 3s infinite linear;
+    }
+
+    .content p a{
+        color: white;
+    }
+
+    .content p a.ts{
+      color: #abcdef;
+  }
+
+  .content p:hover a{
+    color: turquoise;
+} 
+footer a{
+color: white;
+  line-height:30px;
+}
+@keyframes move{
+  0%{
+      transform: scale(1.1)
+  }
+  50%{
+      transform: scale(1)
+  }
+  100%{
+      transform: scale(1.1)
+  }
+}

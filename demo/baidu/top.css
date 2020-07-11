@@ -1,0 +1,151 @@
+﻿/*top区域*/
+
+.yhb_center,
+.yhb_bottom,
+.yhb_top {
+    position: fixed;
+}
+
+.yhb_top a {
+    font-size: 13px;
+    color: #333;
+    display: inline-block;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.top_1 a:hover,
+.top_2 a:hover {
+    color: #00c;
+}
+
+.yhb_top::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.top_2 .denglu {
+    padding-right: 0;
+}
+
+.yhb_top {
+    /* width: 480px; */
+    right: 10px;
+    top: 20px;
+}
+
+.yhb_top ul,
+.yhb_top > ul > li {
+    float: left;
+}
+
+.top_3 > li a {
+    color: white;
+    text-decoration: none;
+    line-height: 24px;
+    padding: 0 6px;
+    background-color: #3388ff;
+}
+
+.top_1 a {
+    font-weight: bold;
+}
+
+.yhb_top .shezhi {
+    position: relative;
+    width: 70px;
+}
+
+.shezhi > a {
+    text-align: center;
+    padding: 0 22px;
+}
+
+.shezhi ul {
+    position: relative;
+    border: 1px solid #d1d1d1;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.shezhi:hover .show {
+    display: block;
+}
+
+.shezhi ul li a {
+    padding: 0;
+    width: 68px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.shezhi ul li a:hover {
+    background-color: #3388ff;
+    color: white;
+    text-decoration: none;
+}
+
+.top_3 {
+    position: relative;
+}
+
+.gengduo {
+    display: none;
+    padding-top: 5px;
+    position: fixed;
+    height: 100%;
+    width: 90px;
+    top: 0;
+    right: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #e7e7e7;
+}
+
+.gengduo p,
+.gengduo li,
+.gengduo a {
+    font-size: 12px;
+    text-align: center;
+}
+
+.gengduo li {
+    height: 76px;
+}
+
+.gengduo > a {
+    display: block;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+}
+
+.gengduo li p a {
+    line-height: 28px;
+}
+
+.gengduo li {
+    margin: 0 auto;
+    width: 66px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 10px;
+}
+
+.top_3:hover .gengduo {
+    display: block;
+}
+
+@media screen and (max-width: 650px){
+    .yhb_top a {
+        padding: 0 4px;
+    }
+
+    .yhb_top .shezhi {
+        position: relative;
+        width: 40px;
+    }
+
+}

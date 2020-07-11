@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>小球跳楼梯小domo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            background-color: red;
+            height: 100%;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .parer {
+            width: 75px;
+            height: 100px;
+            position: relative;
+        }
+        
+        .par {
+            width: 10px;
+            height: 50%;
+            background-color: white;
+            box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            transform-origin: center bottom;
+            bottom: 0;
+        }
+        
+        .par:nth-child(1) {
+            left: 0;
+            transform: scale(1, 0.2);
+            animation: parUp1 4s infinite;
+        }
+        
+        .par:nth-child(2) {
+            left: 15px;
+            transform: scale(1, 0.4);
+            animation: parUp2 4s infinite;
+        }
+        
+        .par:nth-child(3) {
+            left: 30px;
+            transform: scale(1, 0.6);
+            animation: parUp3 4s infinite;
+        }
+        
+        .par:nth-child(4) {
+            left: 45px;
+            transform: scale(1, 0.8);
+            animation: parUp4 4s infinite;
+        }
+        
+        .par:nth-child(5) {
+            left: 60px;
+            transform: scale(1, 1);
+            animation: parUp5 4s infinite;
+        }
+        
+        .pall {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: white;
+            bottom: 10px;
+            animation: pall 4s infinite;
+        }
+        
+        @keyframes pall {
+            0% {
+                transform: translate(0, 0);
+            }
+            5% {
+                transform: translate(8px, -15px);
+            }
+            10% {
+                transform: translate(15px, -10px);
+            }
+            15% {
+                transform: translate(23px, -25px);
+            }
+            20% {
+                transform: translate(30px, -20px);
+            }
+            25% {
+                transform: translate(38px, -35px);
+            }
+            30% {
+                transform: translate(45px, -30px);
+            }
+            35% {
+                transform: translate(52px, -45px);
+            }
+            40% {
+                transform: translate(60px, -40px);
+            }
+            45% {
+                transform: translate(60px, 0);
+            }
+            50% {
+                transform: translate(60px, 0);
+            }
+            55% {
+                transform: translate(52px, -15px);
+            }
+            60% {
+                transform: translate(45px, -10px);
+            }
+            65% {
+                transform: translate(38px, -25px);
+            }
+            70% {
+                transform: translate(30px, -20px);
+            }
+            75% {
+                transform: translate(23px, -35px);
+            }
+            80% {
+                transform: translate(15px, -30px);
+            }
+            85% {
+                transform: translate(8px, -45px);
+            }
+            90% {
+                transform: translate(0, -40px);
+            }
+            95% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+        
+        @keyframes parUp1 {
+            0% {
+                transform: scale(1, 0.2);
+            }
+            40% {
+                transform: scale(1, 0.2);
+            }
+            50% {
+                transform: scale(1, 1);
+            }
+            90% {
+                transform: scale(1, 1);
+            }
+            100% {
+                transform: scale(1, 0.2);
+            }
+        }
+        
+        @keyframes parUp2 {
+            0% {
+                transform: scale(1, 0.4);
+            }
+            40% {
+                transform: scale(1, 0.4);
+            }
+            50% {
+                transform: scale(1, 0.8);
+            }
+            90% {
+                transform: scale(1, 0.8);
+            }
+            100% {
+                transform: scale(1, 0.4);
+            }
+        }
+        
+        @keyframes parUp3 {
+            0% {
+                transform: scale(1, 0.6);
+            }
+            100% {
+                transform: scale(1, 0.6);
+            }
+        }
+        
+        @keyframes parUp4 {
+            0% {
+                transform: scale(1, 0.8);
+            }
+            40% {
+                transform: scale(1, 0.8);
+            }
+            50% {
+                transform: scale(1, 0.4);
+            }
+            90% {
+                transform: scale(1, 0.4);
+            }
+            100% {
+                transform: scale(1, 0.8);
+            }
+        }
+        
+        @keyframes parUp5 {
+            0% {
+                transform: scale(1, 1);
+            }
+            40% {
+                transform: scale(1, 1);
+            }
+            50% {
+                transform: scale(1, 0.2);
+            }
+            90% {
+                transform: scale(1, 0.2);
+            }
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parer">
+        <div class="par"></div>
+        <div class="par"></div>
+        <div class="par"></div>
+        <div class="par"></div>
+        <div class="par"></div>
+        <div class="pall"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    position: absolute;
+    left: calc(50% - 187.5px);
+    top: calc(50% - 333.5px);
+    width: 375px;
+    height: 667px;
+    background-color: #ededed;
+    /* border: 1px solid black; */
+}
+
+/* title */
+.wrapper .title {
+    height: 50px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.wrapper .title span {
+    font-size: 2px;
+    line-height: 50px;
+    display: inline-block;
+}
+
+.wrapper .title .zjt {
+    margin-left: 15px;
+}
+
+.wrapper .title .name {
+    margin-left: 15px;
+}
+
+.wrapper .title ul {
+    display: inline-block;
+    float: right;
+    margin-top: 22px;
+    margin-right: 20px;
+}
+
+.wrapper .title ul li {
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* content */
+.wrapper .content {
+    padding-top: 10px;
+    height: 548px;
+    overflow-y: scroll;
+}
+
+.wrapper .content .content-left {
+    float: left;
+    width: 350px;
+    margin: 12px 0 0 8px;
+}
+
+.wrapper .content .content-right {
+    float: right;
+    width: 350px;
+    margin: 12px 8px 0 0;
+}
+
+.wrapper .content::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrapper .content .content-left div {
+    float: left;
+}
+
+.wrapper .content .content-right div {
+    float: right;
+}
+
+.wrapper .content .content-left::after,
+.wrapper .content .content-left::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrapper .contnet .portrait {
+    width: 42px;
+    height: 42px;
+    border-radius: 3px;
+}
+
+.wrapper .contnet .portrait img{
+    width: 100%;
+}
+
+.wrapper .content span {
+    font-size: 14px;
+}
+
+/* left-content*/
+.wrapper .content .text-left {
+    background-color: #fff;
+    padding: 11px 10px;
+    margin-left: 11px;
+    border-radius: 6px;
+    max-width: 259px;
+    position: relative;
+}
+
+.wrapper .content .text-left::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right: 5px solid #fff;
+    position: absolute;
+    top: 15px;
+    left: -10px;
+}
+
+/* right-content*/
+.wrapper .content .text-right {
+    background-color: #fff;
+    padding: 11px 10px;
+    margin-right: 11px;
+    border-radius: 6px;
+    max-width: 259px;
+    position: relative;
+}
+
+.wrapper .content .text-right::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left: 5px solid #fff;
+    position: absolute;
+    top: 15px;
+    right: -10px;
+}
+
+/* bottom */
+
+.wrapper .bottom {
+    height: 57px;
+    border-top: 1px solid #e8e8e8;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.wrapper .bottom input {
+    width: 234px;
+    height: 42px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 7px;
+    left: 50px;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.wrapper .bottom button {
+    height: 34px;
+    width: 42px;
+    font-size: 14px;
+    background-color: #07c160;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 11px;
+    right: 4px;
+}
+
+.wrapper .bottom span {
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    bottom: 14px;
+}
+
+.wrapper .bottom .button_yy {
+    background-image: url(../img/yy.png);
+    left: 11px;
+    background-size: cover;
+}
+
+.wrapper .bottom .button_xl {
+    background-image: url(../img/xl.png);
+    right: 57px;
+    background-size: cover;
+}

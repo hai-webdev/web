@@ -1,0 +1,100 @@
+@import "./reset.css";
+:root {
+  &,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  #container {
+    width: 100%;
+    min-width: 750px;
+    position: relative;
+    #wrapper-swiper {
+      list-style: none;
+      width: 100%;
+      position: relative;
+      .swiper-slide {
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: none;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        &.active{
+          display: block;
+        }
+      }
+    }
+    .float-list{
+      position: absolute;
+      z-index: 999;  
+      right: 10%;
+      top: 0;
+      width: 300px;
+      height: 100%;
+      background-color:rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ul#swiper-pagination{
+        width: 100%;
+        li.swiper-items{
+          color: white;
+          padding: 0 20px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          p{
+            display: none;
+          }
+          margin-bottom:10px;
+          &.active{
+            background-color: rgba(20,138,155,.2);
+            padding: 8px 20px;
+            .title-wrap .title{
+              font-size: 24px;
+            }
+            p{
+              display: block;
+            }
+          }
+          .title-wrap{
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            .num{
+              width: 16px;
+              height: 16px;
+              background-color: rgba(0, 0, 0, 0.5);
+              text-align: center;
+              line-height: 16px;
+              color: white;
+              font-weight: bold;
+              font-size: 12px;
+              float: left;
+            }
+            .title{
+              float: left;
+              padding-left: 10px;
+              font-size: 14px;
+            }
+          }
+          &:nth-of-type(1) .title-wrap .num{
+            background-color: #fd537f;
+          }
+          &:nth-of-type(2) .title-wrap .num{
+            background-color: #f2a20c;
+          }
+          &:nth-of-type(3) .title-wrap .num{
+            background-color: #148aff;
+          }
+        }
+    }
+    }
+  }
+}

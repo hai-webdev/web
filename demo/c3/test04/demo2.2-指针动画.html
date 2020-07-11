@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>指针动画</title>
+    <style>
+    :root,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0;
+    }
+
+    .wrapper {
+        width: 512px;
+        height: 512px;
+        border: 1px solid black;
+        background-image: url(./img/clock.png);
+        position: relative;
+    }
+
+    .hour {
+        width: 32px;
+        height: 148px;
+        background-image: url(./img/hour.png);
+        position: absolute;
+        z-index: 1;
+        left: calc(50% - 18px);
+        top: calc(30% - 28px);
+        animation: hour 43200s steps(12, end) infinite;
+    }
+
+    .minute {
+        width: 32px;
+        height: 218px;
+        background-image: url(./img/minute.png);
+        position: absolute;
+        z-index: 2;
+        left: calc(50% - 17px);
+        top: calc(16% - 28px);
+        animation: minute 3600s steps(60, end) infinite;
+    }
+
+    .second {
+        width: 16px;
+        height: 278px;
+        background-image: url(./img/second.png);
+        position: absolute;
+        z-index: 3;
+        left: calc(50% - 9px);
+        top: calc(15% - 22px);
+        animation: secound 60s steps(60, end) infinite;
+    }
+
+    @keyframes secound {
+        0%{
+            transform: rotate(0);
+            transform-origin: 8px 202px;
+        }
+        100%{
+            transform: rotate(360deg);
+            transform-origin: 8px 202px;
+        }
+    }
+
+    @keyframes minute {
+        0%{
+            transform: rotate(0);
+            transform-origin: 16px 202px;
+        }
+        100%{
+            transform: rotate(360deg);
+            transform-origin: 16px 202px;
+        }
+    }
+
+    @keyframes hour {
+        0%{
+            transform: rotate(0);
+            transform-origin: 16px 132px;
+        }
+        100%{
+            transform: rotate(360deg);
+            transform-origin: 16px 132px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+</body>
+</html>

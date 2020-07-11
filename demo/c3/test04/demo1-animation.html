@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白天黑夜的变化</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root,
+    body {
+        height: 100%;
+        background-color: #000;
+        overflow: hidden;
+    }
+
+    @keyframes weather-change {
+        0%{
+            opacity: .3;
+        }
+        25%{
+            opacity: 1;
+        }
+        50%{
+            opacity: .3;
+        }
+        75%{
+            opacity: .1;
+        }
+        100%{
+            opacity: .3;
+        }
+    }
+
+    @keyframes run-change {
+        0%{
+            opacity: 0;
+            transform: scale(1.2, 1.2) translateY(0) translateX(-500px);
+        }
+        25%{
+            opacity: 1;
+            transform: scale(1, 1) translateY(-800px);
+        }
+        50%{
+            opacity: 0;
+            transform: scale(1.2, 1.2) translateY(0) translateX(500px);
+        }
+
+        100%{
+            opacity: 0;
+        }
+    }
+
+    @keyframes moon-change {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0;
+            transform: translateY(0) translateX(0);
+        }
+        60%{
+            opacity: 0;
+        }
+        75%{
+            opacity: 1;
+            transform: translateY(-800px);
+        }
+        90%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+            transform: translateY(0) translateX(0);
+        }
+    }
+    .space {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, rgba(0, 130, 255, 1), rgba(255, 255, 255,  1));
+        animation: weather-change 10s cubic-bezier(.5, 0, .5, 1) 2s infinite both;
+    }
+
+    .run {
+        position: absolute;
+        left: calc(50% - 30px);
+        bottom: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+        transform: scale(1.2, 1.2);
+        box-shadow: 0 0 100px 50px #fff, 0 0 100px 100px #ff0;
+        animation: run-change 10s 2s infinite both;
+    }
+
+    .moon {
+        position: absolute;
+        bottom: 0;
+        left: 80%;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 20px #fff, inset 0 0  20px #000;
+        animation: moon-change 10s 2s infinite both;
+    }
+
+    .moon::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #000;
+        transform: translate(-50px, -20px);
+    }
+
+    </style>
+</head>
+<body>
+    <div class="space"></div>
+    <div class="run"></div>
+    <div class="moon"></div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品筛选</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+#app {
+  width: 550px;
+  margin: 80px auto;
+  padding: 5px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+#app .goods {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed #eee;
+  text-indent: 2em;
+}
+
+#app .goods:last-child {
+  border-bottom: none;
+}
+
+#app .goods .type-list {
+  display: flex;
+  text-indent: 0;
+}
+
+#app .goods .type-list .type {
+  margin: 15px 7px;
+  padding: 5px 6px;
+  border-radius: 3px;
+  color: #039;
+  cursor: pointer;
+}
+
+#app .goods .type-list .type:hover {
+  color: #f60;
+  background-color: #f3edc2;
+}
+
+#app .goods .type-list .type.active {
+  color: #fff;
+  background-color: #f60;
+}
+
+#app .choose-type {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+#app .choose-type .no-goods {
+  color: #999;
+  font-weight: normal;
+  padding: 20px;
+}
+
+#app .choose-type .filter-list {
+  display: flex;
+  font-weight: normal;
+}
+
+#app .choose-type .filter-list li {
+  margin: 15px 10px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #f60;
+  cursor: pointer;
+}
+
+#app .choose-type .filter-list li .delete-goods {
+  opacity: .5;
+}
+
+#app .choose-type .filter-list li .delete-goods:hover {
+  opacity: 1;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="goods"
+        v-for="(goods, goodsIndex) in goodsList"
+        :key="goods.id"
+        >
+        <div class="title">{{ goods.title }}：</div>
+        <ul class="type-list">
+            <li class="type"
+                :class="{active: typeIndex === goods.index}"
+                v-for="(type, typeIndex) in goods.typeList"
+                :key="type"
+                @click="addFilterHandle(typeIndex, goods, type, goodsIndex)"
+            >{{ type }}</li>
+        </ul>
+    </div>
+        <div class="choose-type">
+            <div>已选条件：</div>
+            <div class="no-goods"
+                v-if="!showFilterGoods"
+            >暂时没有选择过滤条件</div>
+            <ul class="filter-list"
+                v-if="showFilterGoods"
+            >
+                <li
+                v-for="(filterItem, filterKey) in filterObj"
+                :key="filterItem"
+                >{{ filterItem }}
+                <span class="delete-goods"
+                    @click="deleteFilterGoods(filterKey)"
+                >x</span></li>
+            </ul>
+    
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                goodsList: [{
+                        title: '上装',
+                        typeList: ['全部', '针织衫', '毛呢外套', 'T恤', '羽绒服', '棉衣', '卫衣', '风衣'],
+                        id: 1,
+                    },
+                    {
+                        title: '裤装',
+                        typeList: ['全部', '牛仔裤', '小脚/铅笔裤', '休闲裤', '打底裤', '哈伦裤'],
+                        id: 2,
+                    },
+                    {
+                        title: '裙装',
+                        typeList: ['全部', '连衣裙', '半身裙', '长袖连衣裙', '中长款连衣裙'],
+                        id: 3,
+                    }
+                ],
+                filterObj:{},
+                showFilterGoods: false
+            },
+            methods:{
+                addFilterHandle(typeIndex, goods, type, goodsIndex){
+                    if( type === "全部"){
+                        return false;
+                    }
+                    goods.index = typeIndex;
+                    this.showFilterGoods = true;
+                    vm.$set(this.filterObj, goodsIndex, type)
+                },
+                deleteFilterGoods(filterKey){
+                    vm.$delete(this.filterObj, filterKey);
+                    this.goodsList[filterKey].index = 0;
+                    this.changeGoods();
+                },
+                changeGoods(){
+                    const filterStr = JSON.stringify(this.filterObj);
+                    if(filterStr === "{}"){
+                        this.showFilterGoods = false;
+                    }
+                }
+            }
+        })
+        vm.goodsList.filter(item => vm.$set(item, "index", 0))
+
+    </script>
+
+</body>
+
+</html>

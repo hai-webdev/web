@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo2-Accordion List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        .wrapper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -400px;
+            width: 400px;
+            height: 800px;
+            background-color: #46c9ff;
+            border-radius: 30px;
+        }
+        
+        .wrapper h1 {
+            margin-top: 60px;
+        }
+
+        .wrapper h1,
+        .wrapper > p {
+            text-align: center;
+            color: #fff;
+        }
+
+        .wrapper .content {
+            margin-top: 40px;
+        }
+        .wrapper .content a {
+            display: block;
+            width: 380px;
+            height: 50px;
+            background-color: #fff;
+            /* border-radius: 10px; */
+            margin: 0 auto;
+            text-align: center;
+            line-height: 50px;
+            font-size: 22px;
+            color: #3cacdb;
+            margin-top: 10px;
+        }
+
+        .wrapper .content p span {
+            display: block;
+            width: 380px;
+            height: 40px;
+            background-color: #c3edff;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+            font-size: 22px;
+            color: #3cacdb;
+        }
+
+        .wrapper .button {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            margin-left: -25px;
+            bottom: 25px;
+        }
+
+        .wrapper .header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            margin-left: -50px;
+            width: 100px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .wrapper .content p:not(:target) {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <h1>Web前端的学习线路</h1>
+        <p>备注:暂时只写前面部分</p>
+        <div class="content">
+            <a href="#No1">第一部分</a>
+            <p id="No1">
+                <span>HTMl+css基础部分</span>
+                <span>javascript精英部分</span>
+            </p>
+            <a href="#No2">第二部分</a>
+            <p id="No2">
+                <span>你不知道的js</span>
+                <span>jQuery</span>
+                <span>网络课</span>
+            </p>
+            <a href="#No3">第三部分</a>
+            <p id="No3">
+                <span>华语最帅男讲师成哥-----c3</span>
+                <span>H5</span>
+                <span>Bootstrap</span>
+
+            </p>
+            <a href="#No4">第四部分</a>
+            <p id="No4">
+                <span>Webpack</span>
+                <span>ES6</span>
+                <span>微信小程序</span>
+                <span>Vue初探</span>
+            </p>
+            <a href="#No5">第五部分</a>
+            <p id="No5">
+                <span>js设计模式</span>
+                <span>vue</span>
+                <span>node.js</span>
+                <span>…………</span>
+            </p>
+        </div>
+        <div class="button"></div>
+    </div>
+</body>
+</html>

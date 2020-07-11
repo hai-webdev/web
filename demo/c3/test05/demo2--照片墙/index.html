@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D照片墙</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    :root, body, .wrapper{
+        height: 100%;
+        width: 100%;
+    }
+
+    body{
+        background-color: #000;
+        background-image: radial-gradient(circle at center center, rgba(244, 23, 234, 0.2), rgba(0, 0, 0, 0));
+    }
+    .wrapper{
+        perspective: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper .box {
+        position: relative;
+        width: 120px;
+        height: 180px;
+        transform-style: preserve-3d;
+    }
+
+    .wrapper .box img {
+        width: 100%;
+        position: absolute;
+        -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5) 100%);
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <img src="./image/1.png" alt="">
+            <img src="./image/2.png" alt="">
+            <img src="./image/3.png" alt="">
+            <img src="./image/4.png" alt="">
+            <img src="./image/5.png" alt="">
+            <img src="./image/6.png" alt="">
+            <img src="./image/1.png" alt="">
+            <img src="./image/2.png" alt="">
+            <img src="./image/3.png" alt="">
+            <img src="./image/4.png" alt="">
+            <img src="./image/5.png" alt="">
+            <img src="./image/6.png" alt="">
+        </div>
+    </div>
+
+    <script src="./jquery.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+:root, body{
+    height: 100%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+header{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 30px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.icon, .recycle{
+    position: fixed;
+    top: 25%;
+    width: 30%;
+    height: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 50px -25px #000;
+    text-align: center;
+    color: orange;
+    border-radius: 40px;
+}
+
+h1{
+    user-select: none;
+}
+
+.icon{
+    left: 10%;
+}
+
+.recycle{
+    right: 10%;
+}
+
+article div{
+    width: 80px;
+    height: 80px;
+    background-color: green;
+    border-radius: 10px;
+    margin: 5px;
+    float: left;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    line-height: 80px;
+    box-shadow: 0 0 18px -10px #000;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+    align-content: top;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: 80%;
+}
+
+article::after{
+    content: '';
+    display: block;
+    clear: both;
+}

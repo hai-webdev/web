@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    /* height: 100%; */
+    width: 100%;
+}
+.init{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color:#cc2a5d;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    color: white;
+}
+.mack{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(./love-bg.jpg);
+    background-size: contain;
+    opacity: 0.1;
+    z-index: -1;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+.container {
+    width: 310px;
+    margin: 100px auto;
+    padding:0 20px;
+}
+
+.textCon {
+    font-size: 46px;
+    text-align: center;
+    position: relative;
+}
+
+.heart {
+    width: 60px;
+    height: 60px;
+    margin: 50px auto;
+    background-color: #cc2a5d;
+    position: relative;
+    transform: rotateZ(45deg);
+    animation: heartbeat 1.5s ease-in infinite;
+}
+
+.item {
+    background-color: #cc2a5d;
+    position: absolute;
+    transform: rotateZ(45deg);
+    animation: moveUp ease-in 3s infinite;
+}
+
+.heart::after,
+.heart::before,
+.item::after,
+.item::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #cc2a5d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::after,
+.item::after {
+    transform: translateX(-50%);
+}
+
+.heart::before,
+.item::before {
+    transform: translateY(-50%);
+}
+.record-time{
+    padding-top: 30px;
+}
+.acquaintance,
+.love,
+.note{
+    text-align: center;
+    cursor: default;
+    transition: .5s;
+    margin-bottom: 10px;
+    color: #666;
+}
+.acquaintance{
+    font-size: 18px;
+}
+.love{
+    margin-bottom: 30px;
+    font-size:20px;
+}
+.note{
+    font-size: 18px;
+    color: #cc2a5d;
+}
+.name{
+    padding-top: 10px;
+    text-align: right;
+    color: #666;
+}
+.acquaintance .time,
+.love .time{
+    color: #cc2a5d;
+    font-size: 22px;
+    padding: 0 6px;
+}
+
+.acquaintance:hover,
+.love:hover{
+    transform: translateY(-2px);
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.8) rotate(45deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8) rotate(45deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(-20%) rotate(45deg);
+        opacity: 0.2;
+    }
+
+    25% {
+        transform: translateY(-20%) rotate(45deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-1000%) rotate(45deg);
+        opacity: 0;
+    }
+}
