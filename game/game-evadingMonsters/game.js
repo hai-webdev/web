@@ -37,7 +37,7 @@
             // 碰撞检测
             if (collision(document.getElementsByClassName("hero")[0], monsterArr)) {
                 clearInterval(heroTime);
-                alert("游戏结束,\n时间为：" + timeText.innerHTML);
+                alert("被灰太狼抓住了,\n戏耍了" + timeText.innerHTML + "秒");
               	location.reload();
                 return false;
             }
@@ -45,7 +45,6 @@
             setTime();
         }, 16)
     }
-
     // 设置小英雄
     var hero = {
         width: 32,
@@ -227,7 +226,6 @@
         monster.createDom();
         return monster;
     }
-
     // 碰撞检测
     function collision(hero, monsters) {
         for(var i = 0; i < monsters.length; i ++){
@@ -272,19 +270,16 @@
                              + (timeS % 60).toString().padStart(2, "0") + ":"
                              + (timeMs % 100 ).toString().padStart(2, "0");
     }
-
     // 生成随机数函数
     function setRandom(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
-
     // 初始化函数执行
-
     button.onclick = function(){
         if(!playGame){
             init();
+            document.querySelector(".start").innerText = "戏耍中..."
         }
 
     }
-
 })()

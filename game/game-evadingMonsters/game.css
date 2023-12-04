@@ -23,10 +23,22 @@
 
 .container .content .time{
     color: white;
-    text-align:center;
     font-size:30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    border-radius: 6px;
+    padding: 5px;
+    transform: translateX(-50%);
+    user-select: none;
 }
-
+@media screen and (max-width:768px){
+    .container .content .time{
+        font-size: 15px;
+    } 
+}
 .container .content .hero,
 .container .content .monster{
     background-size: 100% 100%;
@@ -49,12 +61,14 @@ footer{
     margin-top: 10px;
 }
 button.start{
-    width: 100px;
-    height: 50px;
+    /* width: 90px; */
+    padding: 0 10px;
+    height: 38px;
     border: none;
     background-color: #abcdef;
-    color: white;
-    font-size:18px;
+    color: #000;
+    font-weight: bold;
+    font-size:16px;
     border-radius: 6px;
     margin: 10px auto;
     cursor: pointer;
@@ -66,18 +80,37 @@ button.start{
     flex-direction: column;
 }
 .key button{
-    width: 100px;
-    height:50px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .key .top,
 .key .bottom{
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     display: flex;
     justify-content: center;
 }
 .key .bottom button{
-    margin: 0 5px;
+    margin: 0 3px;
+}
+
+.key #up{
+    background-image: url(./img/btn-up.png);
+}
+.key #down{
+    background-image: url(./img/btn-down.png);
+}
+.key #left{
+    background-image: url(./img/btn-left.png);
+}
+.key #right{
+    background-image: url(./img/btn-right.png);
 }
 
 button{
@@ -89,8 +122,11 @@ button{
 }
 
 @media screen and (max-width:500px){
+    .container header{
+        font-size: 14px;
+    }
     .container{
-        width: 80%;
+        width: calc(100% - 10px);
         margin: 0 auto;
     }
     .container .content{
